@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+</head>
+<body>
+    <h3>All Listings</h3>
+    
+        <%for(listing for listings) {%>
+            <div>
+                <ul>
+                    <li><%= listings.title %></li>
+                    <li><%= listings.description %></li>
+                    <li><%= listings.price %></li>
+                    <li><%= listings.location %></li>
+                </ul>
+                </li>
+            </div>
+        <%}%>
+
+    
+</body>
+</html>

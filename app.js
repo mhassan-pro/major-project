@@ -23,7 +23,7 @@ main().then((res)=>{
 
 app.get("/listings",async (req,res) => {
     let listings = await Listing.find({});
-        res.render("listings.ejs",{listings});
+        res.render("./listings/index.ejs",{listings});
 })
 
 app.listen(8080,()=>{
