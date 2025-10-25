@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
+const path = require("path");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -22,10 +23,14 @@ main().then((res)=>{
 
 
 app.get("/listings",async (req,res) => {
-    let listings = await Listing.find({});
-        res.render("./listings/index.ejs",{listings});
+    let allListings = await Listing.find({});
+        res.render("listings/index.ejs",{allListings});
 })
 
+app.get("/",(req,res)=>{
+    console.log("Home route accessed");
+    res.send("Welcome to Wanderlust Home Page");
+})
 app.listen(8080,()=>{
     console.log("Server is running on port 8080");
 });

@@ -7,19 +7,10 @@
 </head>
 <body>
     <h3>All Listings</h3>
-    
-        <%for(listing for listings) {%>
-            <div>
-                <ul>
-                    <li><%= listings.title %></li>
-                    <li><%= listings.description %></li>
-                    <li><%= listings.price %></li>
-                    <li><%= listings.location %></li>
-                </ul>
-                </li>
-            </div>
+    <ul>
+        <%for(let listing of allListings) {%>
+            <a href="/listings/<%= listing._id %>"> <li><%= listing.title %></li> </a>
         <%}%>
-
-    
+    </ul>
 </body>
 </html>
