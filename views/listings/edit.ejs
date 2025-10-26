@@ -3,16 +3,17 @@
     <h3>Update Listing Details...</h3>
       <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
         <input type="text" value="<%= listing.title %>" name="listing[title]">
-
+        <br><br>
         <textarea name="listing[description]"><%= listing.description %></textarea>
-
+        <br><br>
         <input type="text" value="<%= listing.image %>" name="listing[image]">
-
+        <br><br>
         <input type="text" value="<%= listing.price %>" name="listing[price]">
-
+        <br><br>
         <input type="text" value="<%= listing.location %>" name="listing[location]">
-
+        <br><br>
         <input type="text" value="<%= listing.country %>" name="listing[country]">
+        <br><br>
         <button>Add</button>
     </form>
 </body>
