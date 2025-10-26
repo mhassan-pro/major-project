@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust</title>
-   <style>
-        form{
-            height: 240px;
-            width: 200px;
-            border: 2px solid black;
-            line-height: 32px;
-            text-align: center;
-            border-radius: 10px;
-            padding:10px 5px ;
-        }
-    </style>
-</head>
+<% layout('layouts/boilerplate')  -%>
 <body>
     <h3>Create New Listing</h3>
     <form method="POST" action="/listings">
@@ -33,4 +16,3 @@
         <button>Add</button>
     </form>
 </body>
-</html>
