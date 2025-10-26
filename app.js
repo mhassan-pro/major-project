@@ -21,10 +21,18 @@ main().then((res)=>{
     console.log("Failed to connect to database")
 });
 
-
+//index route
 app.get("/listings",async (req,res) => {
     let allListings = await Listing.find({});
         res.render("listings/index.ejs",{allListings});
+})
+
+//show route
+app.get("/listings/:id",async (req,res) => {
+    let{id} = req.params;
+    const listing = await Listing.findById(id);
+    res.render("listings/show.ejs",{listing});
+
 })
 
 app.get("/",(req,res)=>{
