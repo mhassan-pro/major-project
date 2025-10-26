@@ -16,7 +16,10 @@
 }
 
 /* footer */
-.f-info-links, .f-info-socials{
+.f-info-links, .f-info-socials, .f-info-brand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 
