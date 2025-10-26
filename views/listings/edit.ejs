@@ -16,7 +16,7 @@
 </head>
 <body>
     <h3>Update Listing Details...</h3>
-      <form method="POST" action="/listings/:id/edit">
+      <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
         <input type="text" value="<%= listing.title %>" name="listing[title]">
 
         <textarea name="listing[description]"><%= listing.description %></textarea>
