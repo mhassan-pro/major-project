@@ -47,3 +47,13 @@
     align-items: space-evenly;
 
 }
+
+/* cards */
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+}
