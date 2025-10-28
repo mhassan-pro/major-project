@@ -99,3 +99,8 @@ body{
     border: none;
     padding: .5rem 1.5rem;
 }
+
+/* Listing details */
+.show-img {
+    height: 30vh;
+}
