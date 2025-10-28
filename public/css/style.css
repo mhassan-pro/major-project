@@ -69,5 +69,8 @@ body{
 }
 
 .listing-link {
-    
+    text-decoration: none;
 }
+
+/* Cards Effect */
+
