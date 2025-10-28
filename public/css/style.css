@@ -92,3 +92,10 @@ body{
     border: none;
     padding: .5rem 1.5rem;
 }
+
+/* Edit page */
+.edit-btn {
+    background-color: #fe424d;
+    border: none;
+    padding: .5rem 1.5rem;
+}
