@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require('ejs-mate');
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const {listingSchema} = require("./schema.js");
 
 
 app.use(methodOverride("_method"));
@@ -51,6 +52,11 @@ app.get("/listings/:id", wrapAsync(async (req,res) => {
 // create route
 app.post("/listings",
     wrapAsync (async (req,res) => {
+        let result = listingSchema.validate(req.body);
+        console.log(result);
+        if(result.error){
+            throw new ExpressError(400,result.error);
+        }
    // let {title,description,price,location,country} = req.body;
         let listing = new Listing(req.body.listing);
         await listing.save();
