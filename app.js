@@ -30,6 +30,17 @@ main().then((res)=>{
     console.log("Failed to connect to database")
 });
 
+const validateListing = (req,res,next) => {
+     let {error} = listingSchema.validate(req.body);
+        console.log(result);
+        if(result.error){
+            throw new ExpressError(400,result.error);
+        }
+        else{
+            next();
+        }
+}
+
 //index route
 app.get("/listings", wrapAsync(async (req,res) => {
     let allListings = await Listing.find({});
@@ -51,12 +62,9 @@ app.get("/listings/:id", wrapAsync(async (req,res) => {
 );
 // create route
 app.post("/listings",
+    validateListing,
     wrapAsync (async (req,res) => {
-        let result = listingSchema.validate(req.body);
-        console.log(result);
-        if(result.error){
-            throw new ExpressError(400,result.error);
-        }
+       
    // let {title,description,price,location,country} = req.body;
         let listing = new Listing(req.body.listing);
         await listing.save();
