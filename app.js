@@ -32,9 +32,9 @@ main().then((res)=>{
 
 const validateListing = (req,res,next) => {
      let {error} = listingSchema.validate(req.body);
-        console.log(result);
-        if(result.error){
-            throw new ExpressError(400,result.error);
+        if(error){
+            let errMsg =error.details.map(el => el.message).join(","); 
+            throw new ExpressError(400,errMsg);
         }
         else{
             next();
